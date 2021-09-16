@@ -2,26 +2,26 @@ let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let header = document.querySelector('.header-2');
 
-menu.addEventListener('click', () =>{
+menu.addEventListener('click', () => {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
 });
 
-window.onscroll = () =>{
+window.onscroll = () => {
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
 
-    if(window.scrollY > 150){
+    if (window.scrollY > 150) {
         header.classList.add('active');
-    }else{
+    } else {
         header.classList.remove('active');
     }
 
 }
 
-let countDate = new Date('October 01, 2021 00:00:00').getTime();
+let countDate = new Date('September 20, 2021 00:00:00').getTime();
 
-function CountDown(){
+function CountDown() {
 
     let now = new Date().getTime();
     gap = countDate - now;
@@ -43,6 +43,6 @@ function CountDown(){
 
 }
 
-setInterval(function(){
+setInterval(function () {
     CountDown();
-},1000)
+}, 1000)
