@@ -421,23 +421,35 @@
 
         <h1 class="heading"> <span>contact</span> us </h1>
 
-        <form action="">
+        <form method="post" name="google-sheet">
 
             <div class="inputBox">
-                <input type="text" placeholder="name">
-                <input type="email" placeholder="email">
+                <input type="text" placeholder="name" name="Name">
+                <input type="email" placeholder="email" name="Email">
             </div>
 
             <div class="inputBox">
-                <input type="number" placeholder="number">
-                <input type="text" placeholder="subject">
+                <input type="number" placeholder="number" name="Number">
+                <input type="text" placeholder="subject" name="Subject">
             </div>
 
-            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+            <textarea placeholder="message" name="" id="" cols="30" rows="10" name="Message"></textarea>
 
-            <input type="submit" value="send message" class="btn">
+            <input type="submit" value="send message" class="btn" name="submit">
 
         </form>
+        <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzZTK1NhQCxQmTEMXxfkpYIaAQFQmiJlTirAl0AWfBliumOE8BEtgKEPQS2b83xiS5I/exec'
+      const form = document.forms['google-sheet']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => alert("Thanks for Contacting us..! We will get back to You soon ..."))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
 
     </section>
 
