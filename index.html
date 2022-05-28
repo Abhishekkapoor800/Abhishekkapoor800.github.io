@@ -450,17 +450,17 @@
         <h3>subscribe us for latest updates</h3>
 
         <form method="post" name="google-sheet">
-            <input class="box" type="email" placeholder="enter your email" name="email">
+            <input class="box" type="email" placeholder="enter your email" name="Email">
             <input type="submit" value="subscribe" class="btn" name="submit">
         </form>
         <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycby423rSKUJOWpyD_2JBIDZYuWfz_7PuD0AsDH1OE6F6Up8oxIxnRzronjaF7gSGSGx7/exec'
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzZTK1NhQCxQmTEMXxfkpYIaAQFQmiJlTirAl0AWfBliumOE8BEtgKEPQS2b83xiS5I/exec'
       const form = document.forms['google-sheet']
 
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+          .then(response => alert("Thanks for Subscribing us..! We will be Sending You Updates..."))
           .catch(error => console.error('Error!', error.message))
       })
     </script>
